@@ -20,12 +20,13 @@ function addFilm(e){
     const url = urlElement.value;
 
     if(title === "" || director === "" || url === ""){
-        console.log("Missing field(s)");
+        ui.displayMessages("Please fill all the blanks...","danger");
     }
     else {
         const newFilm = new Film(title,director,url);
 
         ui.addFilmToUI(newFilm); //Adding film to the UI
+        ui.displayMessages("The movie added successfully...","success");
     }
 
     ui.clearInputs(titleElement,urlElement,directorElement);
