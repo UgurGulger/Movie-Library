@@ -7,6 +7,10 @@ const urlElement = document.querySelector("#url");
 //Starting UI Object
 const ui = new UI();
 
+//Creating Storage Object
+
+const storage = new Storage();
+
 // Loading all eventListeners
 
 eventListeners();
@@ -26,6 +30,8 @@ function addFilm(e){
         const newFilm = new Film(title,director,url);
 
         ui.addFilmToUI(newFilm); //Adding film to the UI
+        storage.addFilmToStorage(newFilm);
+
         ui.displayMessages("The movie added successfully...","success");
     }
 
